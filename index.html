@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Hex Color</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #color-display {
+            text-align: center;
+        }
+        #hex-code {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="color-display">
+        <p>Random Hex Color:</p>
+        <div id="hex-code"></div>
+    </div>
+
+    <script>
+        // Generate a random hex color code
+        function generateRandomHexColor() {
+            const hexChars = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += hexChars[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Set random color to the page background and display hex code
+        const randomColor = generateRandomHexColor();
+        document.body.style.backgroundColor = randomColor;
+        document.getElementById("hex-code").textContent = randomColor;
+    </script>
+</body>
+</html>
